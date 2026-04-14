@@ -153,3 +153,5 @@ Transfer learning from ImageNet21k → CIFAR-100 (ViT-Base):
 
 for running as a recomended way it goes with 
 python run_all.py --only lora_baseline superlora_2d lorta_3d --steps 5000
+
+for the running purpose in mac the batch size is update to 32, this takes a little bit too long to run, if you want you can change the batch size to 16 and do the running and it will take more than the time of batch size 32 also 
