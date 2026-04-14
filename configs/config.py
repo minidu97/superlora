@@ -38,12 +38,12 @@ class TrainConfig:
     image_size: int = 224
 
     # Backbone
-    model_name: str = "vit_base_patch16_224_in21k"
+    model_name: str = "vit_base_patch16_224"
     pretrained: bool = True
 
     # Training schedule (matches paper: 5000 steps)
     num_steps: int = 5000
-    batch_size: int = 128
+    batch_size: int = 32
     learning_rate: float = 0.05
     weight_decay: float = 1e-4
     momentum: float = 0.9
@@ -66,7 +66,7 @@ class TrainConfig:
     superlora: SuperLoRAConfig = field(default_factory=SuperLoRAConfig)
 
 
-# ── Preset configs from the paper ───────────────────────────────────────────
+#Preset configs from the paper
 
 def lora_baseline() -> TrainConfig:
     cfg = TrainConfig()
