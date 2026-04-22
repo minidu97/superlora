@@ -1,7 +1,7 @@
 # SuperLoRA — Parameter-Efficient Unified Adaptation for Large Vision Models
 
-Implementation of **SuperLoRA** from:
-> Chen et al., *"SuperLoRA: Parameter-Efficient Unified Adaptation for Large Vision Models"*, CVPRW 2024.
+Implementation of **SuperLoRA** from
+*"SuperLoRA: Parameter-Efficient Unified Adaptation for Large Vision Models"*, CVPRW 2024.
 
 ---
 
@@ -10,23 +10,21 @@ Implementation of **SuperLoRA** from:
 ```
 superlora/
 ├── models/
-│   ├── superlora.py          # Core: FastfoodProjection, LoRAUnit, TuckerCore,
-│   │                         #       KroneckerUnit, SuperLoRAGroup, SuperLoRALinear,
-│   │                         #       inject_superlora()
-│   └── vit_superlora.py      # SuperLoRAViT — ViT-Base + adapters
+│   ├── superlora.py                                                     
+│   └── vit_superlora.py      
 ├── configs/
-│   └── config.py             # SuperLoRAConfig, TrainConfig, and paper presets
+│   └── config.py             
 ├── utils/
-│   ├── data.py               # CIFAR-10 / CIFAR-100 data loaders
-│   └── trainer.py            # Training loop, evaluation, checkpointing
+│   ├── data.py               
+│   └── trainer.py            
 ├── experiments/
-│   └── pareto_analysis.py    # Reproduce accuracy vs. #params Pareto curve
+│   └── pareto_analysis.py    
 ├── tests/
-│   └── test_superlora.py     # Unit tests (pytest)
-├── train.py                  # Main training entry point
+│   └── test_superlora.py     
+├── train.py                  
 ├── requirements.txt
 └── .vscode/
-    ├── launch.json           # Ready-to-run VS Code launch configs
+    ├── launch.json           
     └── settings.json
 ```
 
@@ -79,6 +77,7 @@ python train.py --preset lora_baseline --dataset cifar10 --num_classes 10
 
 Open the project folder in VS Code and press **F5** (or use the Run & Debug panel).
 Seven pre-configured launch profiles are available in `.vscode/launch.json`.
+this project is developed and updated on vscode.
 
 ---
 
@@ -139,15 +138,7 @@ and **group-wise sharing** (`n_groups`).
 
 ---
 
-## Results (from paper)
-
-Transfer learning from ImageNet21k → CIFAR-100 (ViT-Base):
-
-| Method | # Params | Accuracy |
-|--------|----------|---------|
-| LoRA (baseline) | ~4×10⁴ | ~0.90 |
-| SuperLoRA 2D | ~1×10⁴ | ~0.90 (+3–4× efficient) |
-| **LoRTA 3D** | **~4×10³** | **~0.91 (+10× efficient)** |
+Transfer learning from ImageNet21k → CIFAR-100 (ViT-Base)
 
 
 
